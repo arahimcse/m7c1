@@ -26,3 +26,6 @@ Route::get('/weather/{name}', [MyController::class,'getWeatherDetails']);
 //method attached for get and post
 Route::get('/form', [MyController::class,'getData']);
 Route::post('/form', [MyController::class,'postData']);
+
+//https://laravel.com/docs/10.x/routing
+//Routing basic study
