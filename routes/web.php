@@ -31,5 +31,9 @@ Route::post('/form', [MyController::class,'postData']);
 //Routing basic study
 
 //Route Parameters
+//Required Parameters
 Route::get('/user/{id}', [MyController::class, 'getParams'] );
 Route::get('post/{post}/comments/{comment}', [MyController::class,'getPost']);
+
+//Optional Parameters
+Route::get('/username/{name?}', [MyController::class,'getUserName']);

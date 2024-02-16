@@ -40,13 +40,25 @@ class MyController extends Controller
         return $data;
     }
 
-    public function getParams(int $id)
+    ////Parameters and Dependency Injection
+    public function getParams(Request $request, int $id)
     {
+        $data = $request->all();
         return 'User '.$id;
     }
 
     public function getPost(string $postId, string $commentId)
     {
         return $postId.''.$commentId;
+    }
+
+    public function getUserName(?string $name=null)
+    {
+        if($name)
+        {
+            return 'User Name '.$name;
+        } else {
+            return 'Not Found ';
+        }
     }
 }
