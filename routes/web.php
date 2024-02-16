@@ -29,3 +29,7 @@ Route::post('/form', [MyController::class,'postData']);
 
 //https://laravel.com/docs/10.x/routing
 //Routing basic study
+
+//Route Parameters
+Route::get('/user/{id}', [MyController::class, 'getParams'] );
+Route::get('post/{post}/comments/{comment}', [MyController::class,'getPost']);

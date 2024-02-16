@@ -39,4 +39,14 @@ class MyController extends Controller
         $data = $request->input('name');
         return $data;
     }
+
+    public function getParams(int $id)
+    {
+        return 'User '.$id;
+    }
+
+    public function getPost(string $postId, string $commentId)
+    {
+        return $postId.''.$commentId;
+    }
 }
