@@ -61,4 +61,17 @@ class MyController extends Controller
             return 'Not Found ';
         }
     }
+
+    public function show()
+    {
+        //Name route mainly used to generating a url
+        $url = route('profile');
+        return $url;
+    }
+
+    public function show1()
+    {
+        $url = route('test', ['id'=> 1, 'photos'=>'yes']);
+        return $url;
+    }
 }

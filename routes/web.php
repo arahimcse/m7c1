@@ -42,3 +42,12 @@ Route::get('/username/{name?}', [MyController::class,'getUserName']);
 Route::get('/t1/{name}', function(string $name){return $name;})->where('name','[A-Za-z]+');
 Route::get('/t2/{id}',function(int $id){return $id;})->where('id','[0-9]+');
 Route::get('/t3/{pa}', function(int|string $pa){return $pa;})->whereAlphaNumeric('pa');
+
+//Named Routes
+Route::get(
+    '/t4/profile',
+    [MyController::class, 'show']
+)->name('profile');
+
+//name route with proper usage
+Route::get('/t5/{id}/test', [MyController::class,'show1'])->name('test');
