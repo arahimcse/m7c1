@@ -37,3 +37,8 @@ Route::get('post/{post}/comments/{comment}', [MyController::class,'getPost']);
 
 //Optional Parameters
 Route::get('/username/{name?}', [MyController::class,'getUserName']);
+
+//Regular Expression Constraints
+Route::get('/t1/{name}', function(string $name){return $name;})->where('name','[A-Za-z]+');
+Route::get('/t2/{id}',function(int $id){return $id;})->where('id','[0-9]+');
+Route::get('/t3/{pa}', function(int|string $pa){return $pa;})->whereAlphaNumeric('pa');
