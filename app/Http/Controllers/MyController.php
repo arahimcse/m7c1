@@ -74,4 +74,9 @@ class MyController extends Controller
         $url = route('test', ['id'=> 1, 'photos'=>'yes']);
         return $url;
     }
+
+    public function myTry()
+    {
+        return 'this from controller structure';
+    }
 }

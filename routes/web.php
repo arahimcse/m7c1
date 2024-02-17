@@ -51,3 +51,8 @@ Route::get(
 
 //name route with proper usage
 Route::get('/t5/{id}/test', [MyController::class,'show1'])->name('test');
+
+//The above practice can be controller 
+Route::controller(MyController::class)->group(function(){
+    Route::get('/try', 'myTry');
+});
